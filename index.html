@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BIOAQUA | Línea Ácido Hialurónico de Rosa</title>
+<title>Proyecto página pedorra en construcción</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
   img{max-width:100%;display:block}
   a{color:inherit}
   :focus-visible{outline:3px solid var(--rosa);outline-offset:3px}
-
+ 
   /* Barra superior */
   header{position:sticky;top:0;z-index:10;background:rgba(255,246,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borde)}
   .nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -32,21 +32,21 @@
   .nav ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
   .nav a{text-decoration:none;font-size:.95rem;font-weight:500}
   .nav a:hover{color:var(--rosa)}
-
+ 
   /* Portada */
   .hero{max-width:1100px;margin:auto;padding:56px 20px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
   .hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;color:var(--vino)}
   .hero p{margin:20px 0 28px;max-width:46ch;font-size:1.1rem}
   .btn{display:inline-block;background:var(--rosa);color:#fff;padding:13px 28px;border-radius:999px;text-decoration:none;font-weight:600}
   .btn:hover{background:var(--vino)}
-  .hero img{border-radius:20px;width:100%}
-
+  
+ 
   /* Secciones */
   section{padding:56px 20px}
   .contenedor{max-width:1100px;margin:auto}
   h2{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--vino);line-height:1.1;margin-bottom:12px}
   .intro{max-width:60ch;margin-bottom:36px}
-
+ 
   /* Rutina */
   .rutina{background:var(--rosa-claro)}
   .pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;list-style:none;counter-reset:paso}
@@ -55,13 +55,13 @@
   .pasos strong{display:block;color:var(--vino);font-size:1.05rem}
   .pasos span{font-size:.92rem}
   .nota-uso{margin-top:24px;font-weight:500}
-  .rutina-img{margin-top:32px;border-radius:20px;width:100%}
-
+  
+ 
   /* Productos */
   .producto{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:40px 0;border-top:1px solid var(--borde)}
   .producto:first-of-type{border-top:0}
-  .producto:nth-of-type(even) img{order:2}
-  .producto img{border-radius:20px;width:100%}
+  .producto:nth-of-type(even) .marco{order:2}
+  
   .producto h3{font-family:var(--serif);font-size:2rem;color:var(--vino);line-height:1.1}
   .producto .sub{color:var(--rosa);font-weight:600;margin:6px 0 14px}
   .producto ul{list-style:none;margin:14px 0}
@@ -71,38 +71,45 @@
   .etiquetas{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
   .etiquetas span{background:var(--rosa-claro);color:var(--vino);font-size:.85rem;font-weight:500;padding:4px 14px;border-radius:999px}
   .aviso{font-size:.8rem;margin-top:12px;opacity:.8}
-
-  /* Galería */
-  .galeria{background:#fff}
-  .galeria .fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-  .galeria img{border-radius:16px;width:100%}
-
+ 
+ 
+  /* Contenedor de imagen: tamaño fijo, la imagen conserva su proporción original */
+  .marco{width:100%;height:clamp(300px,45vw,520px);background:transparent;border:0;display:flex;align-items:center;justify-content:center}
+  .marco img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+  .marco-ancho{height:clamp(220px,50vw,560px);margin-top:32px}
+ 
+  /* Felicitaciones */
+  .felicitaciones{background:var(--rosa-claro);text-align:center}
+  .felicitaciones .contenedor{max-width:720px}
+  .felicitaciones p{margin:0 auto 32px;max-width:52ch;font-size:1.1rem}
+  .felicitaciones .marco{max-width:200px;height:clamp(110px,30vw,160px);margin:0 auto}
+ 
   footer{background:var(--vino);color:#fff;text-align:center;padding:32px 20px;font-size:.9rem}
   footer strong{font-family:var(--serif);font-size:1.4rem}
-
+ 
   @media (max-width:800px){
     .hero,.producto{grid-template-columns:1fr;gap:24px}
-    .producto:nth-of-type(even) img{order:0}
+    .producto:nth-of-type(even) .marco{order:0}
     .nav ul{gap:14px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-
+ 
 <header>
   <nav class="nav" aria-label="Principal">
     <a class="logo" href="#inicio">BIOAQUA</a>
     <ul>
       <li><a href="#rutina">Rutina</a></li>
       <li><a href="#productos">Productos</a></li>
-      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#felicitaciones">Felicitaciones</a></li>
     </ul>
   </nav>
 </header>
-
+ 
 <main id="inicio">
-
+ 
   <!-- PORTADA -->
   <div class="hero">
     <div>
@@ -111,9 +118,9 @@
       <a class="btn" href="#rutina">Ver la rutina</a>
     </div>
     <!-- IMAGEN 1/9: línea completa -->
-    <img src="images/1.png" alt="Línea completa Rose Hyaluronic Acid de BIOAQUA" width="900" height="600">
+    <div class="marco"><img src="https://i.pinimg.com/originals/26/41/d6/2641d64da8c4d83c4adf73d1e637f00d.png" alt="Línea completa Rose Hyaluronic Acid de BIOAQUA"></div>
   </div>
-
+ 
   <!-- RUTINA -->
   <section class="rutina" id="rutina">
     <div class="contenedor">
@@ -128,20 +135,18 @@
         <li><strong>Crema facial</strong><span>Hidrata y nutre profundamente para una piel suave y radiante.</span></li>
       </ol>
       <p class="nota-uso">Úsalo por la mañana y por la noche. Uso diario para mejores resultados. Apto para todo tipo de piel.</p>
-      <!-- IMAGEN 3/9: rutina -->
-      <img class="rutina-img" src="images/3.png" alt="Rutina de cuidado facial en seis pasos" width="1200" height="720" loading="lazy">
     </div>
   </section>
-
+ 
   <!-- PRODUCTOS -->
   <section id="productos">
     <div class="contenedor">
       <h2>Los productos</h2>
       <p class="intro">Todos con 98% de Ácido Hialurónico de Rosa.</p>
-
+ 
       <!-- LIMPIADOR (IMAGEN 6/9) -->
       <article class="producto">
-        <img src="images/6.png" alt="Limpiador hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div class="marco"><img src="https://www.getnow.pk/wp-content/uploads/2025/02/Buy-the-Best-Bioaqua-Rose-Hyaluronic-Acid-in-Pakistan-at-Getnow.pk_.-Best-Price-With-Fast-Shipping-in-All-Over-Pakistan-600x600.jpg" alt="Limpiador hidratante Rose Hyaluronic Acid" loading="lazy"></div>
         <div>
           <h3>Limpiador</h3>
           <p class="sub">Limpieza profunda, piel radiante y frescura duradera</p>
@@ -156,10 +161,10 @@
           <p class="aviso">*Basado en el contenido de limpiadores e ingredientes acondicionadores.</p>
         </div>
       </article>
-
+ 
       <!-- TÓNICO (IMAGEN 7/9) -->
       <article class="producto">
-        <img src="images/7.png" alt="Tónico hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div class="marco"><img src="https://pwa-api.eva.ua/img/0/0/resize/9/2/924574_1_1733402261.jpg" alt="Tónico hidratante Rose Hyaluronic Acid" loading="lazy"></div>
         <div>
           <h3>Tónico hidratante</h3>
           <p class="sub">Rosa &amp; Ácido Hialurónico</p>
@@ -173,10 +178,10 @@
           <div class="etiquetas"><span>Piel suave, fresca y radiante todos los días</span><span>Todo tipo de piel</span><span>Uso diario, día y noche</span></div>
         </div>
       </article>
-
+ 
       <!-- LOCIÓN (IMAGEN 8/9) -->
       <article class="producto">
-        <img src="images/8.png" alt="Loción hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div class="marco"><img src="https://cdn.chanhtuoi.com/uploads/24/01/bioaqua-rose-hyaluronic-acid-moisturizing-lotion_front_photo_original.jpeg.webp" alt="Loción hidratante Rose Hyaluronic Acid" loading="lazy"></div>
         <div>
           <h3>Loción hidratante</h3>
           <p class="sub">Ácido Hialurónico de Rosa</p>
@@ -191,10 +196,10 @@
           <div class="etiquetas"><span>Piel seca, grasa, mixta y sensible</span><span>Sin parabenos</span><span>Sin alcohol</span><span>No testeado en animales</span><span>100 ml / 3.38 fl.oz</span></div>
         </div>
       </article>
-
+ 
       <!-- SUERO (IMAGEN 9/9) -->
       <article class="producto">
-        <img src="images/9.png" alt="Suero hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div class="marco"><img src="https://bioaqua.com.pk/cdn/shop/files/RoseHyaluronicserum_1024x1024.jpg?v=1693670878" alt="Suero hidratante Rose Hyaluronic Acid" loading="lazy"></div>
         <div>
           <h3>Suero hidratante</h3>
           <p class="sub">Con Ácido Hialurónico y Extracto de Rosa</p>
@@ -210,10 +215,10 @@
           <p class="aviso">*Los resultados pueden variar según el tipo de piel y la rutina de cuidado utilizada.</p>
         </div>
       </article>
-
+ 
       <!-- CONTORNO DE OJOS (IMAGEN 4/9) -->
       <article class="producto">
-        <img src="images/4.png" alt="Crema hidratante para el contorno de ojos Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div class="marco"><img src="https://kromaspace.com/wp-content/uploads/2023/09/crema-contorno-de-ojos-antiarrugas-antimanchas.png" alt="Crema hidratante para el contorno de ojos Rose Hyaluronic Acid" loading="lazy"></div>
         <div>
           <h3>Crema para el contorno de ojos</h3>
           <p class="sub">Ácido Hialurónico con Rosa</p>
@@ -227,10 +232,10 @@
           <div class="etiquetas"><span>Para una mirada fresca, suave y radiante cada día</span></div>
         </div>
       </article>
-
+ 
       <!-- CREMA FACIAL (IMAGEN 5/9) -->
       <article class="producto">
-        <img src="images/5.png" alt="Crema hidratante facial Ácido Hialurónico de Rosa" width="1000" height="700" loading="lazy">
+        <div class="marco"><img src="https://www.everythingkeratin.com/cdn/shop/files/BioaquaRoseHyaluronicAcidMoisturisingCream50ml.png?v=1705221785&width=1946" alt="Crema hidratante facial Ácido Hialurónico de Rosa" loading="lazy"></div>
         <div>
           <h3>Crema hidratante</h3>
           <p class="sub">Hidratación y renovación para tu piel</p>
@@ -246,26 +251,24 @@
       </article>
     </div>
   </section>
-
-  <!-- GALERÍA -->
-  <section class="galeria" id="galeria">
+ 
+  <!-- FELICITACIONES -->
+  <section class="felicitaciones" id="felicitaciones">
     <div class="contenedor">
-      <h2>Galería</h2>
-      <div class="fotos">
-        <!-- IMAGEN 2/9 -->
-        <img src="images/2.png" alt="Limpiador, loción y crema Rose Hyaluronic Acid entre rosas" width="900" height="600" loading="lazy">
-        <!-- IMAGEN 1/9 -->
-        <img src="images/1.png" alt="Línea completa de seis productos" width="900" height="600" loading="lazy">
-      </div>
+      <h2>Felicitaciones</h2>
+      <p>No sé que poner XD</p>
+      <!-- IMAGEN DEL MOÑO: cambia el src por tu link -->
+      <div class="marco"><img src="images/mono.png" alt="Moño" loading="lazy"></div>
     </div>
   </section>
-
+ 
 </main>
-
+ 
 <footer>
-  <strong>BIOAQUA</strong>
-  <p>Rose Hyaluronic Acid · Para todo tipo de piel</p>
+  <strong>yo merengues la más mosi</strong>
+  <p>Feliz Cumpleaños :3</p>
 </footer>
-
+ 
 </body>
 </html>
+ 
