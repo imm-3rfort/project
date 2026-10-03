@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIOAQUA | Línea Ácido Hialurónico de Rosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosa:#d4607f;
+    --rosa-claro:#fbe6ea;
+    --rosa-fondo:#fff6f7;
+    --vino:#5a1f2f;
+    --texto:#3a2a2e;
+    --borde:#f0cfd6;
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"Jost",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--texto);background:var(--rosa-fondo);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--rosa);outline-offset:3px}
+
+  /* Barra superior */
+  header{position:sticky;top:0;z-index:10;background:rgba(255,246,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borde)}
+  .nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .logo{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--vino);text-decoration:none;letter-spacing:.02em}
+  .nav ul{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
+  .nav a{text-decoration:none;font-size:.95rem;font-weight:500}
+  .nav a:hover{color:var(--rosa)}
+
+  /* Portada */
+  .hero{max-width:1100px;margin:auto;padding:56px 20px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+  .hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;color:var(--vino)}
+  .hero p{margin:20px 0 28px;max-width:46ch;font-size:1.1rem}
+  .btn{display:inline-block;background:var(--rosa);color:#fff;padding:13px 28px;border-radius:999px;text-decoration:none;font-weight:600}
+  .btn:hover{background:var(--vino)}
+  .hero img{border-radius:20px;width:100%}
+
+  /* Secciones */
+  section{padding:56px 20px}
+  .contenedor{max-width:1100px;margin:auto}
+  h2{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--vino);line-height:1.1;margin-bottom:12px}
+  .intro{max-width:60ch;margin-bottom:36px}
+
+  /* Rutina */
+  .rutina{background:var(--rosa-claro)}
+  .pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;list-style:none;counter-reset:paso}
+  .pasos li{background:#fff;border-radius:16px;padding:18px 16px;counter-increment:paso}
+  .pasos li::before{content:"Paso " counter(paso);display:inline-block;background:var(--rosa);color:#fff;font-size:.8rem;font-weight:600;padding:2px 12px;border-radius:999px;margin-bottom:10px}
+  .pasos strong{display:block;color:var(--vino);font-size:1.05rem}
+  .pasos span{font-size:.92rem}
+  .nota-uso{margin-top:24px;font-weight:500}
+  .rutina-img{margin-top:32px;border-radius:20px;width:100%}
+
+  /* Productos */
+  .producto{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:40px 0;border-top:1px solid var(--borde)}
+  .producto:first-of-type{border-top:0}
+  .producto:nth-of-type(even) img{order:2}
+  .producto img{border-radius:20px;width:100%}
+  .producto h3{font-family:var(--serif);font-size:2rem;color:var(--vino);line-height:1.1}
+  .producto .sub{color:var(--rosa);font-weight:600;margin:6px 0 14px}
+  .producto ul{list-style:none;margin:14px 0}
+  .producto li{padding:8px 0 8px 26px;position:relative;border-bottom:1px solid var(--borde)}
+  .producto li::before{content:"";position:absolute;left:4px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--rosa)}
+  .producto li strong{color:var(--vino)}
+  .etiquetas{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .etiquetas span{background:var(--rosa-claro);color:var(--vino);font-size:.85rem;font-weight:500;padding:4px 14px;border-radius:999px}
+  .aviso{font-size:.8rem;margin-top:12px;opacity:.8}
+
+  /* Galería */
+  .galeria{background:#fff}
+  .galeria .fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .galeria img{border-radius:16px;width:100%}
+
+  footer{background:var(--vino);color:#fff;text-align:center;padding:32px 20px;font-size:.9rem}
+  footer strong{font-family:var(--serif);font-size:1.4rem}
+
+  @media (max-width:800px){
+    .hero,.producto{grid-template-columns:1fr;gap:24px}
+    .producto:nth-of-type(even) img{order:0}
+    .nav ul{gap:14px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Principal">
+    <a class="logo" href="#inicio">BIOAQUA</a>
+    <ul>
+      <li><a href="#rutina">Rutina</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#galeria">Galería</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="inicio">
+
+  <!-- PORTADA -->
+  <div class="hero">
+    <div>
+      <h1>Ácido Hialurónico de Rosa</h1>
+      <p>Una línea de seis productos con ácido hialurónico y extracto de rosa para limpiar, hidratar y cuidar tu piel día y noche. Apta para todo tipo de piel.</p>
+      <a class="btn" href="#rutina">Ver la rutina</a>
+    </div>
+    <!-- IMAGEN 1/9: línea completa -->
+    <img src="images/1.png" alt="Línea completa Rose Hyaluronic Acid de BIOAQUA" width="900" height="600">
+  </div>
+
+  <!-- RUTINA -->
+  <section class="rutina" id="rutina">
+    <div class="contenedor">
+      <h2>Rutina de cuidado facial</h2>
+      <p class="intro">Con Ácido Hialurónico de Rosas, en seis pasos.</p>
+      <ol class="pasos">
+        <li><strong>Limpiador</strong><span>Limpia suavemente para eliminar impurezas y preparar la piel.</span></li>
+        <li><strong>Tónico</strong><span>Hidrata y equilibra la piel, dejándola fresca y suave.</span></li>
+        <li><strong>Loción</strong><span>Hidrata y suaviza la piel, mejorando su textura.</span></li>
+        <li><strong>Suero</strong><span>Concentrado que apoya la hidratación y luminosidad de la piel.</span></li>
+        <li><strong>Contorno de ojos</strong><span>Hidrata y cuida la delicada zona del contorno de ojos.</span></li>
+        <li><strong>Crema facial</strong><span>Hidrata y nutre profundamente para una piel suave y radiante.</span></li>
+      </ol>
+      <p class="nota-uso">Úsalo por la mañana y por la noche. Uso diario para mejores resultados. Apto para todo tipo de piel.</p>
+      <!-- IMAGEN 3/9: rutina -->
+      <img class="rutina-img" src="images/3.png" alt="Rutina de cuidado facial en seis pasos" width="1200" height="720" loading="lazy">
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <div class="contenedor">
+      <h2>Los productos</h2>
+      <p class="intro">Todos con 98% de Ácido Hialurónico de Rosa.</p>
+
+      <!-- LIMPIADOR (IMAGEN 6/9) -->
+      <article class="producto">
+        <img src="images/6.png" alt="Limpiador hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div>
+          <h3>Limpiador</h3>
+          <p class="sub">Limpieza profunda, piel radiante y frescura duradera</p>
+          <p>Con Ácido Hialurónico y Extracto de Rosa.</p>
+          <ul>
+            <li><strong>Ilumina la piel.</strong> Ayuda a mejorar la luminosidad y unifica el tono.</li>
+            <li><strong>Acción antioxidante.</strong> Protege la piel contra los daños ambientales.</li>
+            <li><strong>Limpieza profunda.</strong> Elimina impurezas y limpia profundamente los poros.</li>
+            <li><strong>Espuma rica y densa.</strong> Textura suave que brinda una experiencia de limpieza confortable.</li>
+          </ul>
+          <div class="etiquetas"><span>98% ingredientes de origen natural*</span><span>Todo tipo de piel</span></div>
+          <p class="aviso">*Basado en el contenido de limpiadores e ingredientes acondicionadores.</p>
+        </div>
+      </article>
+
+      <!-- TÓNICO (IMAGEN 7/9) -->
+      <article class="producto">
+        <img src="images/7.png" alt="Tónico hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div>
+          <h3>Tónico hidratante</h3>
+          <p class="sub">Rosa &amp; Ácido Hialurónico</p>
+          <p>Fórmula avanzada con 98% Ácido Hialurónico de Rosa que hidrata profundamente, protege y revitaliza tu piel.</p>
+          <ul>
+            <li><strong>Hidratación intensa</strong></li>
+            <li><strong>Acción antioxidante</strong></li>
+            <li><strong>Previene el envejecimiento</strong></li>
+            <li><strong>Ayuda a reducir poros</strong></li>
+          </ul>
+          <div class="etiquetas"><span>Piel suave, fresca y radiante todos los días</span><span>Todo tipo de piel</span><span>Uso diario, día y noche</span></div>
+        </div>
+      </article>
+
+      <!-- LOCIÓN (IMAGEN 8/9) -->
+      <article class="producto">
+        <img src="images/8.png" alt="Loción hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div>
+          <h3>Loción hidratante</h3>
+          <p class="sub">Ácido Hialurónico de Rosa</p>
+          <p>Fórmula avanzada que hidrata, protege y revitaliza tu piel para un rostro suave, radiante y lleno de vida.</p>
+          <ul>
+            <li><strong>Hidratación intensa.</strong> Retiene la humedad para una piel suave y flexible.</li>
+            <li><strong>Acción antioxidante.</strong> Ayuda a proteger la piel del daño causado por los radicales libres.</li>
+            <li><strong>Anti-envejecimiento.</strong> Mejora la elasticidad y ayuda a reducir la apariencia de líneas finas.</li>
+            <li><strong>Reduce poros.</strong> Ayuda a minimizar visiblemente los poros para una piel más lisa y uniforme.</li>
+          </ul>
+          <p><strong>Modo de uso:</strong> después de limpiar el rostro, aplica una cantidad adecuada de loción en la palma de la mano y extiende suavemente sobre el rostro y cuello con ligeros toques hasta su completa absorción. Úsala mañana y noche para mejores resultados.</p>
+          <div class="etiquetas"><span>Piel seca, grasa, mixta y sensible</span><span>Sin parabenos</span><span>Sin alcohol</span><span>No testeado en animales</span><span>100 ml / 3.38 fl.oz</span></div>
+        </div>
+      </article>
+
+      <!-- SUERO (IMAGEN 9/9) -->
+      <article class="producto">
+        <img src="images/9.png" alt="Suero hidratante Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div>
+          <h3>Suero hidratante</h3>
+          <p class="sub">Con Ácido Hialurónico y Extracto de Rosa</p>
+          <p>Fórmula ligera y de rápida absorción que ayuda a hidratar la piel y mejorar su apariencia con el uso constante.</p>
+          <ul>
+            <li><strong>Hidrata.</strong> Ayuda a mantener la piel suave y con aspecto saludable.</li>
+            <li><strong>Protege.</strong> Contribuye a proteger la piel frente al estrés ambiental y los radicales libres.</li>
+            <li><strong>Mejora.</strong> Favorece la elasticidad y apariencia de la piel, reduciendo la sensación de resequedad.</li>
+            <li><strong>Suaviza.</strong> Puede ayudar a que la piel luzca más lisa y uniforme con el uso continuo.</li>
+          </ul>
+          <p><strong>Modo de uso:</strong> aplica unas gotas sobre el rostro limpio y antes de tu crema hidratante, de día y de noche.</p>
+          <div class="etiquetas"><span>Para todo tipo de piel</span><span>Textura ligera</span><span>No graso</span><span>Sin parabenos</span><span>Probado dermatológicamente</span></div>
+          <p class="aviso">*Los resultados pueden variar según el tipo de piel y la rutina de cuidado utilizada.</p>
+        </div>
+      </article>
+
+      <!-- CONTORNO DE OJOS (IMAGEN 4/9) -->
+      <article class="producto">
+        <img src="images/4.png" alt="Crema hidratante para el contorno de ojos Rose Hyaluronic Acid" width="800" height="1000" loading="lazy">
+        <div>
+          <h3>Crema para el contorno de ojos</h3>
+          <p class="sub">Ácido Hialurónico con Rosa</p>
+          <p>Enriquecida con extracto de rosa.</p>
+          <ul>
+            <li><strong>Hidratación profunda.</strong> Hidrata intensamente y ayuda a mantener la piel suave y flexible.</li>
+            <li><strong>Anti-oxidación.</strong> Ayuda a proteger la piel de los factores externos y del estrés ambiental.</li>
+            <li><strong>Nutre la piel del contorno de ojos.</strong> Fórmula suave que cuida la delicada piel alrededor de los ojos.</li>
+            <li><strong>Ayuda a reducir la apariencia de líneas finas.</strong> Mejora visiblemente la textura de la piel para una apariencia más suave y radiante.</li>
+          </ul>
+          <div class="etiquetas"><span>Para una mirada fresca, suave y radiante cada día</span></div>
+        </div>
+      </article>
+
+      <!-- CREMA FACIAL (IMAGEN 5/9) -->
+      <article class="producto">
+        <img src="images/5.png" alt="Crema hidratante facial Ácido Hialurónico de Rosa" width="1000" height="700" loading="lazy">
+        <div>
+          <h3>Crema hidratante</h3>
+          <p class="sub">Hidratación y renovación para tu piel</p>
+          <p>Con el poder del Ácido Hialurónico de Rosa.</p>
+          <ul>
+            <li><strong>Hidratación profunda.</strong> Retiene la humedad en la piel, manteniéndola suave, fresca y radiante durante todo el día.</li>
+            <li><strong>Acción antioxidante.</strong> Protege la piel contra los radicales libres y el daño ambiental.</li>
+            <li><strong>Combate los signos de la edad.</strong> Ayuda a reducir la apariencia de líneas finas y arrugas, mejorando la elasticidad y firmeza.</li>
+            <li><strong>Reduce poros.</strong> Minimiza visiblemente los poros para una piel más lisa, uniforme y saludable.</li>
+          </ul>
+          <div class="etiquetas"><span>Extracto de rosa</span><span>98% ingredientes de origen natural</span><span>Libre de crueldad</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="galeria" id="galeria">
+    <div class="contenedor">
+      <h2>Galería</h2>
+      <div class="fotos">
+        <!-- IMAGEN 2/9 -->
+        <img src="images/2.png" alt="Limpiador, loción y crema Rose Hyaluronic Acid entre rosas" width="900" height="600" loading="lazy">
+        <!-- IMAGEN 1/9 -->
+        <img src="images/1.png" alt="Línea completa de seis productos" width="900" height="600" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>BIOAQUA</strong>
+  <p>Rose Hyaluronic Acid · Para todo tipo de piel</p>
+</footer>
+
+</body>
+</html>
